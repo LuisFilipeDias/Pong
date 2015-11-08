@@ -36,6 +36,7 @@ public class Pong2016 extends ApplicationAdapter implements InputProcessor{
     @Override
     public void create() {
 
+        // a
         // width and height dimensions are using body dimensions instead of window dimensions
         float w = Gdx.graphics.getWidth()/PIXELS_TO_METERS;
         // Set the height to just 150 pixels above the bottom of the screen so we can see the edge in the
