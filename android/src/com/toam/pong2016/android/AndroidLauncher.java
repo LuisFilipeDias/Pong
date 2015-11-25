@@ -4,8 +4,7 @@ import android.os.Bundle;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
-import com.badlogic.gdx.graphics.Texture;
-import com.toam.pong2016.Pong2016;
+import com.toam.pong2016.main.Pong2016;
 
 public class AndroidLauncher extends AndroidApplication {
 

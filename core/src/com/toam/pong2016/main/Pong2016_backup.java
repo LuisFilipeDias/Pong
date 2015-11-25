@@ -1,4 +1,4 @@
-package com.toam.pong2016;
+package com.toam.pong2016.main;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
