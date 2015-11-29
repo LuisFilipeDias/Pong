@@ -4,10 +4,10 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.toam.pong2016.handlers.Common;
 import com.toam.pong2016.handlers.GameStateManager;
 
-public class Pong2016 extends ApplicationAdapter {
-
+public class Pong2016 extends ApplicationAdapter{
 
     private float accum;
     private SpriteBatch sb;
@@ -26,13 +26,6 @@ public class Pong2016 extends ApplicationAdapter {
         return hudCam;
     }
 
-    public static final float STEP = 1 / 60f;
-    public static final float PPM = 100;
-    public static final String TITLE = "Pong 2016";
-    public static final int V_WIDTH = 640;
-    public static final int V_HEIGHT = 480;
-    public static final int SCALE = 2;
-
     private GameStateManager gsm;
 
     @Override
@@ -40,9 +33,9 @@ public class Pong2016 extends ApplicationAdapter {
 
         sb = new SpriteBatch();
         cam = new OrthographicCamera();
-        cam.setToOrtho(false, V_WIDTH, V_HEIGHT);
+        cam.setToOrtho(false, Common.V_WIDTH/Common.PPM, Common.V_HEIGHT/Common.PPM);
         hudCam = new OrthographicCamera();
-        hudCam.setToOrtho(false, V_WIDTH, V_HEIGHT);
+        hudCam.setToOrtho(false, Common.V_WIDTH/Common.PPM, Common.V_HEIGHT/ Common.PPM);
 
         gsm = new GameStateManager(this);
 
@@ -56,9 +49,9 @@ public class Pong2016 extends ApplicationAdapter {
         // Step the physics simulation forward at a rate of 60hz
         accum += Gdx.graphics.getDeltaTime();
 
-        while(accum >= STEP) {
-            accum -= STEP;
-            gsm.update(STEP);
+        while(accum >= Common.STEP) {
+            accum -= Common.STEP;
+            gsm.update(Common.STEP);
             gsm.render();
         }
     }
